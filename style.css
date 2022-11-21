@@ -4,7 +4,7 @@
 
 body {
     color: whitesmoke;
-    background-color: #398cda;
+    background-color: #0759acce;
 }
 
 header {
@@ -13,11 +13,11 @@ header {
 }
 
 hr {
-    color: whitesmoke;
+    color: rgba(207, 235, 235, 0.671);
 }
 
 aside {
-    background-color: #044f97;
+    background-color: #0a3358;
     border-radius: 15px;
     border: 1px solid #023362;
 }
