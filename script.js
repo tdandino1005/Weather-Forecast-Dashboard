@@ -1,25 +1,17 @@
     $(document).ready(function () {
     var searchHistory = [];
-    //-------------------------------
-    // Dates pulled in from Moment.js
-    //-------------------------------
-    // Today's date
+    
     const momentDay = moment().format('dddd, MMMM Do');
     $('.todayDate').prepend(momentDay);
 
-    // Generate dates for the 5-day forecast
+
     for (var i = 1; i < 6; i++) {
         $(`#${i}Date`).text(moment().add(i, 'd').format('dddd, MMMM Do'));
     }
-    //----------------------------------------------------------
-    // Event listeners
-    //----------------------------------------------------------
-    // Submit event on search form
+
     $('form').on('submit', function (event) {
         event.preventDefault();
-        // Collects the value from the search field
         let city = $('input').val();
-        // Returns if input is empty
         if (city === '') {
             return;
         }
@@ -34,44 +26,40 @@
     // Click event for search history buttons
     $('.searchHistoryEl').on('click', '.historyBtn', function (event) {
         event.preventDefault();
-        // Collects the value from the button text
+
         let btnCityName = $(this).text();
-        // Runs the function to call the API and display retrieved data
+
         call(btnCityName);
     });
 
     $('#clearBtn').on('click', function (event) {
         event.preventDefault();
-        // Clears local storage
+        
         window.localStorage.clear();
-        // Clears the search history element
+        
         $('.searchHistoryEl').empty();
         searchHistory = [];
         renderButtons();
-        // Clears and resets the form
+        
         $('form')[0].reset();
     });
 
-    //---------------
-    // Creates and displays buttons for each city that is searched. Persists on refresh.
-    //---------------
+   
     const renderButtons = () => {
-        // Clears the search history div
+        
         $('.searchHistoryEl').html('');
-        // For each item in the search history array
+
         for (var j = 0; j < searchHistory.length; j++) {
-            // Store the search term (city) and create a button with the search term displayed
+           
             let cityName1 = searchHistory[j];
             let historyBtn = $(
                 '<button type="button" class="btn btn-primary btn-lg btn-block historyBtn">'
             ).text(cityName1);
-            // Prepend the buttons to the search history div
+            
             $('.searchHistoryEl').prepend(historyBtn);
         }
     };
-    //-------------
-    // Pulls localStorage into searchHistory array
-    //-------------
+    
     const init = () => {
         // Get stored cities from localStorage
         // Parsing the JSON string to an object
