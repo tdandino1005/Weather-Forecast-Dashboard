@@ -8,4 +8,5 @@ AS A traveler
 I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
 
-image.png
+![image](https://user-images.githubusercontent.com/114967217/203225245-3a025cb7-98fd-473f-b5b8-c5582068a1ca.png)
+
