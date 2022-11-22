@@ -77,8 +77,8 @@
 
 
     const uvCall = (lon, lat) => {
-        let uvQueryURL = `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&units=imperial&appid=77cb488591d883bec900753d1136d81c`;
-
+            let uvQueryURL = `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&units=imperial&appid=77cb488591d883bec900753d1136d81c`;
+    
         $.ajax({
             url: uvQueryURL,
             method: 'GET',
@@ -103,7 +103,6 @@
 
     const fiveDay = (lon, lat) => {
         let fiveQueryURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=imperial&appid=77cb488591d883bec900753d1136d81c`;
-
         $.ajax({
             url: fiveQueryURL,
             method: 'GET',
@@ -128,9 +127,10 @@
     };
 
 
+
     const call = (btnCityName) => {
         let cityName = btnCityName || $('input').val();
-        let queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=77cb488591d883bec900753d1136d81c`;
+        let queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=bff238c2dde8f7f8ec393ac93f7d62da`;
 
         $.ajax({
             url: queryURL,
